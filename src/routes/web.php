@@ -18,3 +18,5 @@ use App\Http\Controllers\ContactController;
     //return view('welcome');
 //});
 Route::get('/', [ContactController::class, 'index']);
+Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+
