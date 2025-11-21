@@ -18,7 +18,13 @@
       </a>
     </div>
   </header>
+@extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endsection
+
+@section('content')
   <main>
     <div class="contact-form__content">
       <div class="contact-form__heading">
@@ -54,6 +60,9 @@
             </div>
             <div class="form__error">
               <!--バリデーション機能を実装したら記述します。-->
+              @error('name')
+              {{ $message}}
+              @enderror
             </div>
           </div>
         </div>
@@ -86,6 +95,7 @@
         </div>
       </form>
     </div>
+    @endsection
   </main>
 </body>
 

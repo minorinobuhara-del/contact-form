@@ -19,13 +19,20 @@
       </a>
     </div>
   </header>
+@extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
+@endsection
+
+@section('content')
   <main>
     <div class="confirm__content">
       <div class="confirm__heading">
         <h2>お問い合わせ内容確認</h2>
       </div>
       <form class="form" action="/contacts" method="post">
+        @csrf
         <div class="confirm-table">
           <table class="confirm-table__inner">
             <tr class="confirm-table__row">
@@ -59,6 +66,7 @@
         </div>
       </form>
     </div>
+    @endsection
   </main>
 </body>
 
